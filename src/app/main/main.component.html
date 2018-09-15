@@ -1,0 +1,26 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Favorite food" value="Sushi">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Leave a comment"></textarea>
+  </mat-form-field>
+</form>
+
+
+
+<mat-form-field>
+  <mat-select (selectionChange)="storeSelected()" placeholder="Select Store" [(value)]="astore">
+    <mat-option *ngFor="let store of getKeys(stores)" value="{{store}}"> {{store}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field *ngIf="storeSelectedState == true">
+  <mat-select placeholder="Select Location" (selectionChange)="storeLocationSelected()" [(value)]="alocation">
+    <mat-option *ngFor="let location of getKeys(locations)" value="{{location}}"> {{location}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<div class="button-row">
+  <button mat-raised-button color="primary" [disabled]="!locationSelected" routerLink="/store/{{locations?.get(alocation)}}">Next</button>
+</div>
