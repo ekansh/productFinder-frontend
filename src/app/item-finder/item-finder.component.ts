@@ -8,6 +8,7 @@ import { MaincontentService } from '../maincontent.service';
 })
 export class ItemFinderComponent implements OnInit {
 storeid: string;
+locationid: string;
 results:string;
 searched=false;
 product='';
@@ -17,8 +18,9 @@ category='';
   ngOnInit() {
     this.route.paramMap.subscribe(
       params => {
-        this.storeid = params.get('id');
-        console.log("id opbtained " + this.storeid);
+        this.storeid = params.get('storeid');
+        this.locationid = params.get('locationid');
+        console.log("id obtained " + this.storeid);
       }
     );
   }

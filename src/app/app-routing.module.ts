@@ -7,7 +7,7 @@ import { MainComponent } from './main/main.component';
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
   { path: 'storeselector', component: StoreSelectorComponent },
-  { path: 'store/:id', component: ItemFinderComponent },
+  { path: 'store/:storeid/location/:locationid', component: ItemFinderComponent },
   { path: 'main', component: MainComponent }
 ];
 

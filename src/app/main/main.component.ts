@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MaincontentService } from '../maincontent.service';
-
+import {StoreVO,StoreLocationVO} from  '../model/store';
 
 @Component({
   selector: 'app-main',
@@ -8,16 +8,17 @@ import { MaincontentService } from '../maincontent.service';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
- stores: Map<string, string>;
- locations: Map<string, string>;
- astore='';
- alocation='';
+ stores: StoreVO[];
+ locations: StoreLocationVO[];
+ astore:number;
+ alocation:number;
  storeSelectedState=false;
  locationSelected= false;
   constructor(private contentService: MaincontentService) { }
 
   ngOnInit() {
         this.contentService.getStores().subscribe(e => this.stores = e);
+        console.log(this.stores)
   }
  getKeys(map){
     return Array.from(map.keys());
@@ -25,7 +26,7 @@ export class MainComponent implements OnInit {
   storeSelected(){
     console.log("state changed "+this.astore);
     this.storeSelectedState=true;
-    this.contentService.getStoreLocation(this.stores.get(this.astore)).subscribe(e => this.locations = e);
+    this.contentService.getStoreLocation(this.astore).subscribe(e => this.locations = e);
   }
    storeLocationSelected(){
      console.log("location "+this.alocation);

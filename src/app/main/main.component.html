@@ -8,19 +8,26 @@
   </mat-form-field>
 </form>
 
+<mat-form-field>
+  <mat-select placeholder="Select Store" (selectionChange)="storeSelected()"  [(value)]="astore">
+    <mat-option *ngFor="let store of stores" value="{{store.storeid}}"> {{store.name}}</mat-option>
+  </mat-select>
+</mat-form-field>
 
 
+<!--
 <mat-form-field>
   <mat-select (selectionChange)="storeSelected()" placeholder="Select Store" [(value)]="astore">
     <mat-option *ngFor="let store of getKeys(stores)" value="{{store}}"> {{store}}</mat-option>
   </mat-select>
 </mat-form-field>
-
+-->
 <mat-form-field *ngIf="storeSelectedState == true">
   <mat-select placeholder="Select Location" (selectionChange)="storeLocationSelected()" [(value)]="alocation">
-    <mat-option *ngFor="let location of getKeys(locations)" value="{{location}}"> {{location}}</mat-option>
+    <mat-option *ngFor="let location of locations" value="{{location.locationid}}"> {{location.locationAddress}}</mat-option>
   </mat-select>
 </mat-form-field>
 <div class="button-row">
-  <button mat-raised-button color="primary" [disabled]="!locationSelected" routerLink="/store/{{locations?.get(alocation)}}">Next</button>
+  <!--button mat-raised-button color="primary" [disabled]="!locationSelected" routerLink="/store/{{locations?.get(alocation)}}">Next</button-->
+  <button mat-raised-button color="primary" [disabled]="!locationSelected" routerLink="/store/{{astore}}/location/{{alocation}}">Next</button>
 </div>

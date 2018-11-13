@@ -1,0 +1,25 @@
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "pk": 48,
+      "first_name": "Jon",
+      "last_name": "Does",
+      "profile": {
+        "pk": 46,
+        "gender": "U"
+      }
+    },
+    {
+      "pk": 47,
+      "first_name": "Pablo",
+      "last_name": "Escobar",
+      "profile": {
+        "pk": 45,
+        "gender": "M"
+      }
+    }
+  ]
+}
