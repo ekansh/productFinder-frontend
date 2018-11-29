@@ -14,7 +14,7 @@ export class MaincontentService {
   getStores(): Observable<StoreVO[]> {
     //var stores: Map<string, string> = new Map<string, string>();
     let url='/assets/response.json';
-    url='http://18.191.140.98:8080/gs-accessing-data-rest/api/stores';
+    url='https://18.191.140.98:8443/gs-accessing-data-rest/api/stores';
     let ele:StoreVO[];
     //let k=this.http.get<StoreVO[]>(url).subscribe(data => {ele=data;console.log(ele[0].name)});
     return this.http.get<StoreVO[]>(url);
@@ -30,7 +30,7 @@ export class MaincontentService {
   getStoreLocation(storeid: number): Observable<StoreLocationVO[]> {
     //let headers = new HttpHeaders();
     //headers = headers.set('Access-Control-Allow-Origin','*');
-    let url='http://18.191.140.98:8080/gs-accessing-data-rest/api/storeslocation/'+storeid;
+    let url='https://18.191.140.98:8443/gs-accessing-data-rest/api/storeslocation/'+storeid;
     console.log("calling url "+url);
     return this.http.get<StoreLocationVO[]>(url);
     //var s= this.http.get<Object[]>(url,{headers: headers}).subscribe(data => console.log(data));;
