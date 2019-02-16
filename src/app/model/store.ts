@@ -11,6 +11,14 @@ export interface Store {
     storeid:string;
     name:number;
 }
+export interface SearchResult{
+    productName: string;
+    categoryName: string;
+    categoryDescription: string;
+    productDescription: string;
+    aisleName:string;
+    aisleDescription:string;
+}
 
 export interface User{
     count: string;

@@ -1,27 +1,13 @@
-<form class="example-form">
+<section class="button-row pricing-header mx-auto text-center">
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="product name" value="Sushi">
+    <input matInput placeholder="product or category" value="search for product" [(ngModel)]="product">
   </mat-form-field>
 
-  <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Leave a comment"></textarea>
-  </mat-form-field>
-</form>
-
-<div class="button-row">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="product name" value="search for product" [(ngModel)]="product">
-  </mat-form-field>
-
-  <button mat-raised-button color="primary" (click)="search()">Next</button>
-</div>
-<div class="button-row">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="category name" value="search for category" [(ngModel)]="category">
-  </mat-form-field>
-
-  <button mat-raised-button color="primary" (click)="search()">Next</button>
-</div>
-<div class="button-row" *ngIf="searched === true">
- {{results}}
-</div>
+  <button mat-raised-button color="primary" (click)="search()">Find</button>
+</section>
+<section class="container" *ngFor='let result of results'>
+ {{result.productName}}<br/>
+ {{result.aisleDescription}}
+ <br/>
+ <br/>
+</section>
