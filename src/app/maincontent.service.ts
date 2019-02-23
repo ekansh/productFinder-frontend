@@ -5,8 +5,8 @@ import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 import { StoreVO, StoreLocationVO, Store, User, SearchResult } from './model/store';
 
-//const prodductFinderBackendUrl: string = 'https://18.191.140.98:8443/gs-accessing-data-rest';
-const prodductFinderBackendUrl: string = 'http://localhost:8080'
+const prodductFinderBackendUrl: string = 'https://18.191.140.98:8443/gs-accessing-data-rest';
+//const prodductFinderBackendUrl: string = 'http://localhost:8080'
 @Injectable()
 export class MaincontentService {
 
